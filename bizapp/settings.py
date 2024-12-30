@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-!l62&ovzx4*ng^!s3wj8(_%@tan@e=p7tsiczxm=n3t^u)*2bu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -44,6 +44,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 ROOT_URLCONF = 'bizapp.urls'
 
@@ -69,16 +70,15 @@ WSGI_APPLICATION = 'bizapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(conn_max_age=600)
 }
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Your React app's development server
-    "http://your-production-domain.com",  # Production domain
+    "http://biznessapp.onrender.com",  # Production domain
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -129,5 +129,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media settings
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
