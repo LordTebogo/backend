@@ -74,8 +74,7 @@ WSGI_APPLICATION = 'bizapp.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgresql://turfapp_user:985pAPUG6HRUvxpo27m5iVFUDm2mB7r5@dpg-ctpok98gph6c73dg6ki0-a/turfapp
-')
+        default=os.getenv('DATABASE_URL', 'postgresql://turfapp_user:985pAPUG6HRUvxpo27m5iVFUDm2mB7r5@dpg-ctpok98gph6c73dg6ki0-a/turfapp')
     )
 }
 
