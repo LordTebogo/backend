@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-!l62&ovzx4*ng^!s3wj8(_%@tan@e=p7tsiczxm=n3t^u)*2bu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['.onrender.com','127.0.0.1']
 
 
 # Application definition
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'bizapp.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgresql://turfapp_user:985pAPUG6HRUvxpo27m5iVFUDm2mB7r5@dpg-ctpok98gph6c73dg6ki0-a/turfapp')
+        default=os.getenv('DATABASE_URL', 'postgresql://turfapp_user:985pAPUG6HRUvxpo27m5iVFUDm2mB7r5@dpg-ctpok98gph6c73dg6ki0-a.oregon-postgres.render.com/turfapp')
     )
 }
 
