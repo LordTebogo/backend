@@ -13,7 +13,8 @@ SECRET_KEY = 'f&w6rfl13!7o3^5$_(1gg+lg__l&au@9bx+2o%^0k_72^$^7ix'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['.onrender.com',"https://turfbizappapi.onrender.com/"]
+ALLOWED_HOSTS += ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -135,10 +136,9 @@ REST_FRAMEWORK = {
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "https://biznessapp.onrender.com",
-    "http://biznessapp.onrender.com",
+    "https://turfbizapp.onrender.com/",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOW_CREDENTIALS = True
