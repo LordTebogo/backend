@@ -136,7 +136,7 @@ REST_FRAMEWORK = {
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
-    "https://turfbizapp.onrender.com/",
+    "https://turfbizapp.onrender.com"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
