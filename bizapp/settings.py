@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'bizapp.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'postgresql://turfapp_user:985pAPUG6HRUvxpo27m5iVFUDm2mB7r5@dpg-ctpok98gph6c73dg6ki0-a/turfapp')
+        default=os.getenv('DATABASE_URL', 'postgresql://turfbizappdb_user:DEjNmrU2QIYF4poVuvnpCSjH6d47X416@dpg-cttigabv2p9s738j2ad0-a/turfbizappdb')
     )
 }
 # Password validation
